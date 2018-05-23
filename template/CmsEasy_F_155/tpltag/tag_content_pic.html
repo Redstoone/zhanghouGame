@@ -1,0 +1,26 @@
+{loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $i $archive}
+
+
+
+
+{if $i%6==0 && $i>1}
+<div class="clearfix visible-xs-block visible-sm-block"></div>
+{elseif $i%4==0 && $i>1}
+<div class="clearfix visible-lg-block visible-md-block visible-xs-block"></div>
+{elseif $i%2==0 && $i>1}
+<div class="clearfix visible-xs-block"></div>
+{elseif $i%3==0 && $i>1}
+<div class="clearfix visible-sm-block"></div>
+{/if}
+<li class="slideanim">
+	<figure>
+		<a href="{$archive['url']}" target="_blank"><img alt="{$archive['stitle']}" src="{$archive['thumb']}" onerror='this.src="{config::get('onerror_pic')}"' /></a>
+	</figure>
+</li>
+
+
+
+
+
+
+{/loop}

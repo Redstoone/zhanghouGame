@@ -1,0 +1,18 @@
+{loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1,$_son,$_wheretype,$_tpl,$_intro_len,$_istop) $i $archive}
+
+
+
+
+<div class="view view-first slideanim">
+                <a href="{$archive['url']}" target="_blank"><img alt="{$archive['stitle']}" src="{$archive['thumb']}" onerror='this.src="{config::get('onerror_pic')}"' /></a>
+                <div class="mask">
+                    <h4><a href="{$archive['url']}" style="color:{$arc[color]};" target="_blank" >{$archive['title']}</a></h4>
+					<a href="{$archive['url']}" class="info">{$archive['my_zhiwei']}</a>
+                </div>
+            </div>  
+
+
+
+
+
+{/loop}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="{getKeywords($archive,$category,$catid,$type)}" />
+	<meta name="description" content="{getDescription($archive,$category,$catid,$type)}" />
+	<meta name="author" content="CmsEasy Team" />
+	<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+	<title>{getTitle($archive,$category,$catid,$type)} - {get(sitename)}</title>
+
+  <link rel="stylesheet" href="{$skin_path}/css/animate.css">
+	<link rel="stylesheet" href="{$skin_path}/css/icomoon.css">
+	<link rel="stylesheet" href="{$skin_path}/css/bootstrap.css">
+	<link rel="stylesheet" href="{$skin_path}/css/magnific-popup.css">
+	<link rel="stylesheet" href="{$skin_path}/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="{$skin_path}/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="{$skin_path}/css/flexslider.css">
+	<link rel="stylesheet" href="{$skin_path}/css/style.css">
+	<script src="{$skin_path}/js/modernizr-2.6.2.min.js"></script>
+</head>
+{if get('shield_right_key')=='1'}
+	<body oncontextmenu="return false" onselectstart="return false">
+	<noscript><iframe src="/*.html>";</iframe></noscript>
+	<script>
+	function stop(){
+	return false;
+	}
+	document.oncontextmenu=stop;
+	</script>
+{else}
+	<body>
+{/if}
+
+<!-- navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">{get(sitename)}</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="{$base_url}/" class="navbar-brand"><img src="{get('site_logo')}" class="img-responsive" alt="{get(sitename)}" width="{get(logo_width)}" /></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="oen{if $topid==0} active{/if}"><a href="{$base_url}/">{lang(homepage)}</a></li>
+{loop categories_nav() $t}
+<li class="oen{if count(categories($t[catid]))} dropdown{/if}">
+<a href="{$t[url]}"{if config::get('nav_blank')==1} target=" _blank"{/if}{if count(categories($t[catid]))} data-toggle="dropdown" data-submenu=""{/if}
+>{$t[catname]}{if count(categories($t[catid]))}<span class="caret"></span>{/if}</a>
+{if count(categories($t[catid]))}
+<ul class="dropdown-menu">
+{loop categories_nav($t[catid]) $t1}
+<li{if count(categories($t1[catid]))} class="dropdown-submenu"{/if}>
+<a title="{$t1[catname]}" href="{$t1[url]}">{$t1[catname]}</a>
+{if count(categories($t1[catid]))}
+<ul class="dropdown-menu">
+{loop categories_nav($t1[catid]) $t2}
+<li{if count(categories($t2[catid]))} class="dropdown-submenu"{/if}>
+<a title="{$t2[catname]}" href="{$t2[url]}">{$t2[catname]}</a>
+{if count(categories($t2[catid]))}
+<ul class="dropdown-menu">
+{loop categories_nav($t2[catid]) $t3}
+<li{if count(categories($t3[catid]))} class="dropdown-submenu"{/if}><a title="{$t3[catname]}" href="{$t3[url]}">{$t3[catname]}</a>
+{if count(categories($t3[catid]))}
+<ul class="dropdown-menu">
+{loop categories_nav($t3[catid]) $t4}
+<li><a title="{$t4[catname]}" href="{$t4[url]}">{$t4[catname]}</a>
+</li>
+{/loop}
+</ul>
+{/if}
+</li>
+{/loop}
+</ul>
+{/if}
+</li>
+{/loop}
+</ul>
+{/if}
+</li>
+{/loop}
+</ul>
+{/if}
+</li>
+{/loop}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<!-- /navigation -->
+
+
+
+
+{if $topid==0}
+{else}
+{template 'system/cslide.html'}
+{/if}

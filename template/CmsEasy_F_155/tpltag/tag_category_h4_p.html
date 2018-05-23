@@ -1,0 +1,9 @@
+{loop plugins::categoryinfo($_catid) $cat}
+
+
+
+<h4 class="text-center slideanim"><a href="{$cat[url]}">{$cat[catname]}</a></h3>
+<p class="serv slideanim">{cut(strip_tags($cat['categorycontent']),46)}</p>
+
+
+{/loop}
