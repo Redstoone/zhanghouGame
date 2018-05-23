@@ -106,7 +106,7 @@ foreach(categories_nav($t3['catid']) as $t4) { ?>
 
 
 
-<?php if($topid==0) { ?>
+<!-- <?php if($topid==0) { ?>
 <?php } else { ?>
 <?php echo template('system/cslide.html'); ?>
-<?php } ?>
+<?php } ?> -->

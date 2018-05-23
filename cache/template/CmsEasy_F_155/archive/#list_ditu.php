@@ -1,47 +1,76 @@
 <?php defined('ROOT') or exit('Can\'t Access !'); ?>
 <?php echo template('header.html'); ?>
 
-<div class="contact-us">
-<div class="container">
-<h3>
-<span>HELLO.</span> What can we<br />
-help you with?
-</h3>
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-<span class="glyphicon glyphicon-map-marker col-xs-4 col-sm-4 col-md-4 col-lg-4"></span>
-<dl class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-<dt><?php echo lang(contactus);?></dt>
-<dd><?php echo lang(address);?>：<?php echo get(address);?></dd>
-<dd><?php echo lang(postcode);?>：<?php echo get('postcode');?></dd>
-</dl>
+<div id="fh5co-map">
+<div id="l-map" class="l-map"></div>
 </div>
 
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-<span class="glyphicon glyphicon-earphone col-xs-4 col-sm-4 col-md-4 col-lg-4"></span>
-<dl class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-<dt><?php echo lang(guesttel);?></dt>
-<dd><?php echo lang(servertel);?>：<?php echo get(tel);?></dd>
-<dd><?php echo lang(mobile);?>：<?php echo get('mobile');?></dd>
-<dd><?php echo lang(fax);?>：<?php echo get(fax);?></dd>
-</dl>
+<div id="fh5co-contanctus" class="contact-us">
+<div class="container">
+<div class="title-comm">
+<h3 class="welinain animate-box fadeInUp animated-fast">联系我们</h3>
+<p class="line"></p>
+<p class="linh25 f12 animate-box fadeInUp animated-fast">让大众获得更便捷可及、优质高效与值得信赖的法律服务</p>
 </div>
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-<span class="glyphicon glyphicon-envelope col-xs-4 col-sm-4 col-md-4 col-lg-4"></span>
-<dl class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-<dt><?php echo lang(guestemail);?></dt>
-<dd><?php echo lang(guestemail);?>：<?php echo get(email);?></dd>
-<dd><?php echo lang(complaint);?><?php echo lang(email);?>：<?php echo get(complaint_email);?></dd>
-</dl>
+<div class="row contactus">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="tcenter contactus-item animate-box fadeInUp animated-fast">
+<div class="contact-icon">
+<i class="icon icon-user"></i>
 </div>
-<div class="clearfix"></div>
-</div>
-</div>
-<div class="container-fluid">
-<div class="content-ditu">
-<?php echo template('ditu.html'); ?>
+<div>
+<h4>联系我们</h4>
+<p class="f12">电话/传真：0579-85222035</p>
+<p class="f12">邮箱：lawyeryu1964@sina.com</p>
 </div>
 </div>
-</div><!-- /lianxi -->
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<div class="tcenter contactus-item animate-box fadeInUp animated-fast">
+<div class="contact-icon">
+<i class="icon icon-location2"></i>
+</div>
+<div>
+<h4>公司地址</h4>
+<p class="f12">浙江省宁波市南部商务区罗蒙大厦806室</p>
+<p class="f12">邮编：315000</p>
+</div>
+</div>
+</div>
+</div>
+<!-- <div class="gray-line"></div>
+<div class="app-none">
+<div class="title-comm">
+<h3 class="welinain animate-box fadeInUp animated-fast">反馈意见</h3>
+<p class="line animate-box fadeInUp animated-fast"></p>
+<p class="linh25 animate-box fadeInUp animated-fast">您宝贵的建议是我们前进的动力，期待您的反馈和建议</p>
+</div>
+<div class="feedback">
+<div class="feedback-l animate-box fadeInUp animated-fast">
+<img src="/public/v2/images/fwzx.jpg" class="img-responsive">
+</div>
+<div class="feedback-r">
+<div class="feedback-submit-con">
+<input type="text" id="TxtTel" class="inputdiv form-control animate-box fadeInUp animated-fast" placeholder="请输入邮箱或电话号码，便于我们联系您">
+<textarea id="TxtContent" class="form-control animate-box fadeInUp animated-fast"></textarea>
+<a href="javascript:AddFeedback()" id="btn-submit" class="global-btn animate-box fadeInUp animated-fast" data-submit="1">提交</a>
+</div>
+</div>
+</div>
+</div> -->
+</div>
+</div>
+
+<script type="text/javascript" src="http://api.map.baidu.com/getscript?v=3.0&ak=TP8TFzQgzyg1yx6t4k96F7AiFePln1Fo&services=&t=20170517145936"></script>
+<script type="text/javascript">
+var map = new BMap.Map("l-map");
+map.addControl(new BMap.NavigationControl());
+var local = new BMap.LocalSearch(map, {
+renderOptions: {
+map: map
+}
+});
+local.search("浙江省宁波市南部商务区罗蒙大厦");
+</script>
 
 <?php echo template('footer.html'); ?>

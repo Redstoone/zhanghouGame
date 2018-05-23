@@ -5,7 +5,7 @@
     <div class="row row-pb-md">
       <div class="col-md-3 fh5co-widget">
         <h4>掌猴游戏</h4>
-        <p>这里是二位码</p>
+        <p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作,经典房卡模式,花色棋牌游戏平台海量用户等你代理加盟。</p>
       </div>
       <div class="col-md-3 col-md-push-1">
         <h4>代理加盟联系方式</h4>
@@ -31,7 +31,7 @@
       <div class="col-md-3 col-md-push-1">
         <h4>联系我们</h4>
         <ul class="fh5co-footer-links">
-          <li>深圳市南山区科技南十二路康佳研发大厦B区6C-F室
+          <li>浙江省宁波市南部商务区罗蒙大厦806室
             <li>
               <a href=""> 177-2466-3243（招商专线）</a>
             </li>
@@ -47,7 +47,11 @@
       <div class="col-md-3 col-md-push-1">
         <h4>工作时间</h4>
         <ul class="fh5co-footer-links">
-          <li>周一 至 周五 09:00-15:30</li>
+          <li>周一 至 周五 09:00-17:30</li>
+          <li class="qrcode-box">
+            <img src="/public/v2/images/qrcode.jpg" alt="微信公众号二维码">
+            <p>微信扫描二维码获取最新信息</p>
+          </li>
         </ul>
       </div>
 

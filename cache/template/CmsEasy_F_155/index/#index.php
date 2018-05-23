@@ -317,7 +317,7 @@ hideMore: false
 </div>
 </aside>
 
-<div id="fh5co-counter" class="fh5co-counters fh5co-bg-section">
+<div id="fh5co-counter" class="fh5co-counters">
 <div class="container">
 <div class="row">
 <div class="col-md-4 text-center animate-box">
@@ -349,7 +349,7 @@ hideMore: false
 <div class="container">
 <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-<h2>联运商6大特权</h2>
+<h2>联运商3大特权</h2>
 <p>免购买费，免加盟费，免平台费！只需有人脉立即当老板。</p>
 </div>
 </div>
@@ -357,7 +357,7 @@ hideMore: false
 <div class="col-md-4 text-center animate-box">
 <div class="services">
 <span class="icon">
-<i class="icon-home"></i>
+<i class="icon-stats-dots"></i>
 </span>
 <div class="desc">
 <h3>
@@ -371,7 +371,7 @@ hideMore: false
 <div class="col-md-4 text-center animate-box">
 <div class="services">
 <span class="icon">
-<i class="icon-eye"></i>
+<i class="icon-magic-wand"></i>
 </span>
 <div class="desc">
 <h3>
@@ -385,7 +385,7 @@ hideMore: false
 <div class="col-md-4 text-center animate-box">
 <div class="services">
 <span class="icon">
-<i class="icon-shopping-cart"></i>
+<i class="icon-bubbles4"></i>
 </span>
 <div class="desc">
 <h3>
