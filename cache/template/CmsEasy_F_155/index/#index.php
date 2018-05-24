@@ -208,59 +208,8 @@
 </section> -->
 <!-- portfolio section -->
 <!-- team section -->
-<!-- <section class="our-team" id="team">
-<?php echo templatetag::tag('首页第四行栏目');?>
-<div class="container">
-<div class="main">
-<?php echo templatetag::tag('首页第四行栏目图片4条');?>
-</div>
-</div>
-</section> -->
+
 <!-- /team section -->
-<!-- <section class="contact-us slideanim" id="contact">
-<?php echo templatetag::tag('首页第五行栏目');?>
-<div class="container">
-<div class="row">
-<div class="col-lg-5 col-md-5">
-<div class="contact-info">
-<h4 class="slideanim" style="margin-top: 0;"><?php echo lang(contactus);?> :-</h4>
-<p class="slideanim">
-<strong><?php echo lang(tel);?> :</strong> <?php echo get(tel);?></p>
-<p class="slideanim">
-<strong><?php echo lang(email);?> :</strong>
-<a href="mailto:<?php echo get(email);?>"><?php echo get(email);?></a>
-</p>
-<p class="addr slideanim">
-<strong><?php echo lang(address);?> :</strong> <?php echo get(address);?></p>
-<ul class="social-icons2">
-<div class="jiathis_style pc_show">
-<a class="jiathis_button_qzone"></a>
-<a class="jiathis_button_tsina"></a>
-<a class="jiathis_button_tqq"></a>
-<a class="jiathis_button_weixin"></a>
-<a class="jiathis_button_renren"></a>
-<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript">
-var jiathis_config = {
-hideMore: false
-}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-</ul>
-</div>
-</div>
-
-
-<div class="col-lg-7 col-md-7 contact-us-r">
-
-<?php echo callGuestbook();?>
-
-</div>
-</div>
-</div>
-</section> -->
 
 <aside id="fh5co-hero" class="js-fullheight">
 <div class="flexslider js-fullheight">
@@ -507,5 +456,56 @@ hideMore: false
 </div>
 </div>
 </div>
+
+<!-- <section class="our-team" id="team">
+<?php echo templatetag::tag('首页第四行栏目');?>
+<div class="container">
+<div class="main">
+<?php echo templatetag::tag('首页第四行栏目图片4条');?>
+</div>
+</div>
+</section> -->
+
+<!-- <section class="contact-us slideanim" id="contact">
+<?php echo templatetag::tag('首页第五行栏目');?>
+<div class="container">
+<div class="row">
+<div class="col-lg-5 col-md-5">
+<div class="contact-info">
+<h4 class="slideanim" style="margin-top: 0;"><?php echo lang(contactus);?> :-</h4>
+<p class="slideanim">
+<strong><?php echo lang(tel);?> :</strong> <?php echo get(tel);?></p>
+<p class="slideanim">
+<strong><?php echo lang(email);?> :</strong>
+<a href="mailto:<?php echo get(email);?>"><?php echo get(email);?></a>
+</p>
+<p class="addr slideanim">
+<strong><?php echo lang(address);?> :</strong> <?php echo get(address);?></p>
+<ul class="social-icons2">
+<div class="jiathis_style pc_show">
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_weixin"></a>
+<a class="jiathis_button_renren"></a>
+<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config = {
+hideMore: false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+</ul>
+</div>
+</div>
+
+<div class="col-lg-7 col-md-7 contact-us-r">
+<?php echo callGuestbook();?>
+</div>
+</div>
+</div>
+</section> -->
 
 <?php echo template('footer.html'); ?>

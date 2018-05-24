@@ -1,12 +1,8 @@
 <?php defined('ROOT') or exit('Can\'t Access !'); ?>
 <?php echo template('header.html'); ?>
-<!-- 面包屑导航开始 -->
-<?php echo template('position.html'); ?>
-<!-- 面包屑导航结束 -->
-
 
 <!-- 中部开始 -->
-<div class="container list-container">
+<div class="container list-container" style="padding: 3em 0;">
 <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 <h2>棋牌代理资讯</h2>

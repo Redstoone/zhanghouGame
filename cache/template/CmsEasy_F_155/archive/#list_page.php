@@ -1,19 +1,18 @@
 <?php defined('ROOT') or exit('Can\'t Access !'); ?>
 <?php echo template('header.html'); ?>
 <!-- 面包屑导航开始 -->
-<?php echo template('position.html'); ?>
+<!-- <?php echo template('position.html'); ?> 
 <!-- 面包屑导航结束 -->
 
-<div id="fh5co-team-section" class="fh5co-pricing fh5co-lightgray-section" style="background: rgb(245,245,245);">
+<div id="fh5co-team-section" class="fh5co-bg-section fh5co-pricing fh5co-lightgray-section">
 <div class="container">
-<div class="row">
-<div class="col-md-8 col-md-offset-2">
-<div class="heading-section text-center animate-box fadeInUp animated">
+<div class="row animate-box">
+<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 <h2>选择代理花色棋牌游戏的4大理由</h2>
-<p>
-<a href="http://www.huasehuyu.com">棋牌游戏代理</a>联运-利润丰厚，月入过万不是梦！</p>
+<p>棋牌游戏代理 联运-利润丰厚，月入过万不是梦！</p>
 </div>
 </div>
+<div class="row">
 <div class="pricing">
 <div class="col-md-3 animate-box fadeInUp animated">
 <div class="price-box animate-box fadeInUp animated">
@@ -60,10 +59,78 @@
 </div>
 </div>
 </div>
-<div class="row text-center animate-box fadeInUp animated">
-<span>
-<a href="tencent://message/?uin=849598330&amp;Site=im.qq.com&amp;Menu=yes" target="_blank" class="btn btn-default">我要代理</a>
-</span>
+</div>
+</div>
+
+<div class="product grow-con" id="prospect" name="prospect" style="padding-top: 7em;">
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2 text-center">
+<h2>未来前景可观</h2>
+<p>棋牌代理行业前景，连续四年爆发增长，</p>
+</div>
+</div>
+<div class="grow row">
+<div class="col-md-offset-1 col-md-2 col-sm-12 grow-one wow animated fadeInDown animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInDown;">
+<div class="grow-box ">
+<div class="grow-text ">
+2014年，移动游戏行业收入规模翻了4.4倍，预计达到220亿元，增长非常迅速。 行业内接触手游设备规模
+<span class="fw600 c-red"> 预计可达到10.4亿台</span>。
+</div>
+</div>
+<div class="grow-circle"></div>
+<div class="grow-year">
+2014
+</div>
+</div>
+<div class="col-md-2 col-sm-12 grow-two wow animated fadeInDown animated" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInDown;">
+<div class="grow-box ">
+<div class="grow-text ">
+2015年中国移动游戏市场规模约562亿，增长率再创新高，超过100%。全国牌用户已突破2.4亿， 棋牌游戏类占比8%，
+<span class="fw600 c-red">棋牌市场50亿左右</span>。
+</div>
+</div>
+<div class="grow-circle"></div>
+<div class="grow-year">
+2015
+</div>
+</div>
+<div class="col-md-2 col-sm-12 grow-three wow animated fadeInUp animated" data-wow-delay="1.2s" style="visibility: visible; animation-delay: 1.2s; animation-name: fadeInUp;">
+<div class="grow-year">
+2016
+</div>
+<div class="grow-circle-down"></div>
+<div class="grow-box ">
+<div class="grow-text mt15">
+2016年前后，房卡模式退出，地方特色棋牌平台迎来资本热，行业热度迅速升温， 地方特色棋牌游戏
+<span class="fw600 c-red">市场规模总计38.4亿元，用户规模达到1.57亿</span>。
+</div>
+</div>
+</div>
+<div class="col-md-2 col-sm-12 grow-four wow animated fadeInUp animated" data-wow-delay="1.6s" style="visibility: visible; animation-delay: 1.6s; animation-name: fadeInUp;">
+<div class="grow-year">
+2017
+</div>
+<div class="grow-circle-down"></div>
+<div class="grow-box ">
+<div class="grow-text mt15">
+2017年随着移动端棋牌游戏的普及，全年年棋牌游戏市场规模突破1000亿万。 棋牌游戏也跟随整体市场规模稳定上升，预估
+<span class="fw600 c-red">市场规模将达到83亿元</span>。
+</div>
+</div>
+</div>
+<div class="col-md-2 col-sm-12 grow-five wow animated fadeInUp animated" data-wow-delay="2s" style="visibility: visible; animation-delay: 2s; animation-name: fadeInUp;">
+<div class="grow-year">
+2018
+</div>
+<div class="grow-circle-down"></div>
+<div class="grow-box ">
+<div class="grow-text mt15">
+2018从整个游戏市场来看，棋牌游戏在网络游戏中所占的比重持续增加，
+<span class="fw600 c-red">市场规模有望突破100亿大关</span>。
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
