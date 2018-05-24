@@ -38,25 +38,29 @@ document.oncontextmenu=stop;
 <?php } ?>
 
 <!-- navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="fh5co-nav" role="navigation" class="navbar navbar-default navbar-fixed-top">
+<div class="top-menu">
     <div class="container">
-        <div class="navbar-header">
+      <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 <span class="sr-only"><?php echo get(sitename);?></span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a href="<?php echo $base_url;?>/" class="navbar-brand"><img src="<?php echo get('site_logo');?>" class="img-responsive" alt="<?php echo get(sitename);?>" width="<?php echo get(logo_width);?>" /></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
+<a href="<?php echo $base_url;?>/" class="navbar-brand">
+<img src="<?php echo get('site_logo');?>" class="img-responsive" alt="<?php echo get(sitename);?>" width="<?php echo get(logo_width);?>" />
+</a>
+    	</div>
+<div id="navbar" class="navbar-collapse collapse">
 <ul class="nav navbar-nav navbar-right">
 <li class="oen<?php if($topid==0) { ?> active<?php } ?>"><a href="<?php echo $base_url;?>/"><?php echo lang(homepage);?></a></li>
 <?php if(is_array(categories_nav()))
 foreach(categories_nav() as $t) { ?>
 <li class="oen<?php if(count(categories($t['catid']))) { ?> dropdown<?php } ?>">
-<a href="<?php echo $t['url'];?>"<?php if(config::get('nav_blank')==1) { ?> target=" _blank"<?php } ?><?php if(count(categories($t['catid']))) { ?> data-toggle="dropdown" data-submenu=""<?php } ?>
-><?php echo $t['catname'];?><?php if(count(categories($t['catid']))) { ?><span class="caret"></span><?php } ?></a>
+<a href="<?php echo $t['url'];?>"<?php if(config::get('nav_blank')==1) { ?> target=" _blank"<?php } ?><?php if(count(categories($t['catid']))) { ?> data-toggle="dropdown" data-submenu=""<?php } ?>>
+<?php echo $t['catname'];?><?php if(count(categories($t['catid']))) { ?><span class="caret"></span><?php } ?>
+</a>
 <?php if(count(categories($t['catid']))) { ?>
 <ul class="dropdown-menu">
 <?php if(is_array(categories_nav($t['catid'])))
@@ -73,13 +77,13 @@ foreach(categories_nav($t1['catid']) as $t2) { ?>
 <ul class="dropdown-menu">
 <?php if(is_array(categories_nav($t2['catid'])))
 foreach(categories_nav($t2['catid']) as $t3) { ?>
-<li<?php if(count(categories($t3['catid']))) { ?> class="dropdown-submenu"<?php } ?>><a title="<?php echo $t3['catname'];?>" href="<?php echo $t3['url'];?>"><?php echo $t3['catname'];?></a>
+<li<?php if(count(categories($t3['catid']))) { ?> class="dropdown-submenu"<?php } ?>>
+<a title="<?php echo $t3['catname'];?>" href="<?php echo $t3['url'];?>"><?php echo $t3['catname'];?></a>
 <?php if(count(categories($t3['catid']))) { ?>
 <ul class="dropdown-menu">
 <?php if(is_array(categories_nav($t3['catid'])))
 foreach(categories_nav($t3['catid']) as $t4) { ?>
-<li><a title="<?php echo $t4['catname'];?>" href="<?php echo $t4['url'];?>"><?php echo $t4['catname'];?></a>
-</li>
+<li><a title="<?php echo $t4['catname'];?>" href="<?php echo $t4['url'];?>"><?php echo $t4['catname'];?></a></li>
 <?php } ?>
 </ul>
 <?php } ?>
@@ -97,10 +101,11 @@ foreach(categories_nav($t3['catid']) as $t4) { ?>
 <?php } ?>
 </li>
 <?php } ?>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+</ul>
+</div><!--/.nav-collapse -->
+</div>
+</div>
+</nav>
 <!-- /navigation -->
 
 
