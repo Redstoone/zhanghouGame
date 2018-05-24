@@ -53,7 +53,7 @@
 //网站描述[<span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="网站网页描述内容，可简写与网站相关的简介！" /></span>]
 
 
-'site_logo'=>'/images/logo.png',
+'site_logo'=>'/images/logo.jpg',
 
 //网站logo[<span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="点击绿色加号，上传网站logo！" /></span>]=>image
 

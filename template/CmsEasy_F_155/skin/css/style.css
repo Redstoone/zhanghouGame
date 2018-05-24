@@ -66,14 +66,14 @@ body {
 }
 
 a {
-  color: #F95959;
+  color: #828282;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 
 a:hover, a:active, a:focus {
-  color: #F95959;
+  color: #828282;
   outline: none;
   text-decoration: none;
 }
@@ -606,6 +606,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .services {
   position: relative;
+  min-height: 266px;
   padding: 30px;
   margin-bottom: 60px;
   background: #fff;
@@ -1146,6 +1147,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-footer {
   background: #efefef;
+  border-top: 1px solid #ddd;
 }
 
 #fh5co-footer .fh5co-footer-links {
@@ -1933,6 +1935,30 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .banner{
   margin-top: 82px;
+}
+
+.qrcode-item{
+  display: inline-block;
+  margin-right: 15px;
+  text-align: center;
+}
+.qrcode-item img{
+  width: 120px !important;
+  height: 120px !important;
+  display: block;
+}
+
+.footer .text-center p{
+  margin-bottom: 0;
+}
+
+.footer a:hover{
+  text-decoration: underline;
+}
+
+.navbar-brand img{
+  width: 70px;
+  margin-top: -8px;
 }
 
 /*# sourceMappingURL=style.css.map */

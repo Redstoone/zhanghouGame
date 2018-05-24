@@ -3,58 +3,50 @@
 <footer id="fh5co-footer" role="contentinfo" class="footer">
   <div class="container">
     <div class="row row-pb-md">
-      <div class="col-md-3 fh5co-widget">
-        <h4>掌猴游戏</h4>
-        <p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作,经典房卡模式,花色棋牌游戏平台海量用户等你代理加盟。</p>
+
+
+      <div class="col-md-4 col-md-push-1">
+        <h4>微信公众号</h4>
+        <ul class="fh5co-footer-links">
+          <li class="qrcode-box row">
+            <div class="qrcode-item">
+              <img src="<?php echo $skin_path;?>/images/yxdt.jpg" alt="掌猴游戏大厅">
+              <small>掌猴游戏大厅</small>
+            </div>
+            <div class="qrcode-item">
+              <img src="<?php echo $skin_path;?>/images/yyzx.jpg" alt="掌猴游戏运营中心">
+              <small>掌猴游戏运营中心</small>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="col-md-3 col-md-push-1">
+
+      <div class="col-md-4 col-md-push-1">
         <h4>代理加盟联系方式</h4>
         <ul class="fh5co-footer-links">
-          <li>
-            <a href="#">官方直招微信：huasennn666</a>
-          </li>
-          <li>
-            <a href="#">诚招代理商QQ：849598330</a>
-          </li>
-          <li>
-            <a href="#">玩家客服QQ：3263464515</a>
-          </li>
-          <li>
-            <a href="#">客服邮箱：service@yangeit.com</a>
-          </li>
-          <li>
-            <a href="#">招聘邮箱：zhaopin@yangeit.com</a>
+          <li> 官方直招微信：13116673394 </li>
+          <li> 官方直招微信：13757488797 </li>
+          <li> 诚招代理商QQ：13757488797 </li>
+          <li>客服邮箱：
+            <a href="mailto:1152884413@qq.com">1152884413@qq.com</a>
           </li>
         </ul>
       </div>
 
-      <div class="col-md-3 col-md-push-1">
+      <div class="col-md-4 col-md-push-1">
         <h4>联系我们</h4>
         <ul class="fh5co-footer-links">
-          <li>浙江省宁波市南部商务区罗蒙大厦806室
-            <li>
-              <a href=""> 177-2466-3243（招商专线）</a>
-            </li>
-            <li>
-              <a href="">zhanghou@yangeit.com</a>
-            </li>
-            <li>
-              <a href="">www.zhanghou.com</a>
-            </li>
-        </ul>
-      </div>
-
-      <div class="col-md-3 col-md-push-1">
-        <h4>工作时间</h4>
-        <ul class="fh5co-footer-links">
-          <li>周一 至 周五 09:00-17:30</li>
-          <li class="qrcode-box">
-            <img src="/public/v2/images/qrcode.jpg" alt="微信公众号二维码">
-            <p>微信扫描二维码获取最新信息</p>
+          <li>浙江省宁波市南部商务区罗蒙大厦806室</li>
+          <li>131-1667-3394（招商专线1）</li>
+          <li>137-5748-8797（招商专线2）</li>
+          <li>
+            <a href="mailto:1152884413@qq.com">1152884413@qq.com</a>
+          </li>
+          <li>
+            <a href="http://www.zhanghou.com">www.zhanghou.com</a>
           </li>
         </ul>
       </div>
-
     </div>
 
     <div class="row copyright">
@@ -64,6 +56,12 @@
             <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank"><?php echo get('site_icp');?></a><?php } ?><?php if(config::get('site_beian_number')) { ?>&nbsp;&nbsp;
             <a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo get('site_beian_number');?>" rel="nofollow"
               target="_blank"><?php echo get('site_beian');?><?php echo lang(site_beian);?><?php echo get('site_beian_number');?><?php echo lang(number);?></a> <?php } ?>
+          </small>
+        </p>
+        <p>
+          <small class="block">
+            Powered by
+            <a href="https://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
           </small>
         </p>
       </div>

@@ -7,21 +7,28 @@
 
 <!-- 中部开始 -->
 <div class="container list-container">
+<div class="row animate-box">
+<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+<h2>棋牌代理资讯</h2>
+</div>
+</div>
 <div class="row">
-<div class="col-md-8">
-<!-- 内容列表开始 -->
 <?php if(is_array($archives))
 foreach($archives as $i => $archive) { ?>
-<div class="row news-list list-border">
-<div class="list-date">
-<span><?php echo sdate($archive['adddate'],'d');?></span>
-<p><?php echo sdate($archive['adddate'],'Y-m');?></p>
+<div class="col-lg-4 col-md-4">
+<div class="fh5co-blog animate-box">
+<a href="<?php echo $archive['url'];?>" class="blog-text">
+<h3> <?php echo $archive['title'];?> </h3>
+<span class="posted_on"><?php echo sdate($archive['adddate'],'Y-m-d');?></span>
+<p><?php echo cut(strip_tags($archive['introduce']),66);?>…</p>
+<p class="btn btn-primary">查看更多</p>
+</a>
 </div>
-<h4><a title="<?php echo $archive['stitle'];?>" href="<?php echo $archive['url'];?>" target="_blank" ><?php echo $archive['title'];?></a></h4>
-<p><?php echo cut(strip_tags($archive['introduce']),66);?>… <a href="<?php echo $archive['url'];?>" target="_blank">[<?php echo lang(more);?>]</a></p>
 </div>
 <?php } ?>
 <!-- 内容列表结束 -->
+</div>
+<!-- /row -->
 <div class="blank30"></div>
 <!-- 内容列表分页开始 -->
 <?php if(isset($pages)) { ?>
@@ -29,21 +36,10 @@ foreach($archives as $i => $archive) { ?>
 <?php echo category_pagination($catid);?>
 <div class="blank30"></div>
 <?php } ?>
-<!-- 内容列表分页结束 -->
 </div>
-<div class="col-md-4">
-<?php echo template('list_right.html'); ?>
-</div>
-</div><!-- /row -->
-</div><!-- /container -->
+<!-- /container -->
 <!-- /中部开始 -->
 
 <div class="blank30"></div>
-
-
-<!-- 页底推荐图文产品开始 -->
-<?php echo templatetag::tag('内容页底图文产品三条');?>
-<!-- 页底推荐图文产品结束 -->
-
 
 <?php echo template('footer.html'); ?>
