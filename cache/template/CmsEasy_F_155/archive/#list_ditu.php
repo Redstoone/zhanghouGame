@@ -1,10 +1,6 @@
 <?php defined('ROOT') or exit('Can\'t Access !'); ?>
 <?php echo template('header.html'); ?>
 
-<div id="fh5co-map">
-<div id="l-map" class="l-map"></div>
-</div>
-
 <div id="fh5co-contanctus" class="contact-us">
 <div class="container">
 <div class="title-comm">
@@ -59,6 +55,10 @@
 </div>
 </div> -->
 </div>
+</div>
+
+<div id="fh5co-map">
+<div id="l-map" class="l-map"></div>
 </div>
 
 <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=3.0&ak=TP8TFzQgzyg1yx6t4k96F7AiFePln1Fo&services=&t=20170517145936"></script>

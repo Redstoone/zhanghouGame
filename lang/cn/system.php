@@ -12,7 +12,7 @@ array(
 'login'=>'登录',
 'register'=>'注册',
 'aid'=>'编号',
-'homepage'=>'网站首页',
+'homepage'=>'首页',
 'backhome'=>'返回首页',
 'search'=>'搜索',
 'quicknav'=>'快速导航',

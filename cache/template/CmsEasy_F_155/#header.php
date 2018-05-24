@@ -38,7 +38,7 @@ document.oncontextmenu=stop;
 <?php } ?>
 
 <!-- navigation -->
-<nav class="fh5co-nav" role="navigation" class="navbar navbar-default navbar-fixed-top">
+<nav class="fh5co-nav navbar navbar-default navbar-fixed-top" role="navigation">
 <div class="top-menu">
     <div class="container">
       <div class="navbar-header">
@@ -108,10 +108,7 @@ foreach(categories_nav($t3['catid']) as $t4) { ?>
 </nav>
 <!-- /navigation -->
 
-
-
-
-<!-- <?php if($topid==0) { ?>
+<?php if($topid==0) { ?>
 <?php } else { ?>
 <?php echo template('system/cslide.html'); ?>
-<?php } ?> -->
+<?php } ?>
