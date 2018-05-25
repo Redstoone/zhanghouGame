@@ -150,28 +150,49 @@
 <div class="container">
 <div class="row">
 <div class="col-md-4 col-sm-6 text-center fh5co-project animate-box" data-animate-effect="fadeIn">
-<a href="#">
+<div class="team-section-grid">
 <img src="<?php echo $skin_path;?>/images/project-1.jpg" alt="" class="img-responsive">
-<h3>斗地主</h3>
+<div class="overlay-section">
+<div class="desc">
+<a href="/index.php?id=95">
+<h2 style="color: white; margin-bottom: 5%;">斗地主游戏</h2>
+<p>斗地主游戏玩法</p>
 </a>
 </div>
-<div class="col-md-4 col-sm-6 text-center fh5co-project animate-box" data-animate-effect="fadeIn">
-<a href="#">
-<img src="<?php echo $skin_path;?>/images/project-2.jpg" alt="" class="img-responsive">
-<h3>斗地主</h3>
-</a>
+</div>
+</div>
 </div>
 <div class="col-md-4 col-sm-6 text-center fh5co-project animate-box" data-animate-effect="fadeIn">
-<a href="#">
-<img src="<?php echo $skin_path;?>/images/project-3.jpg" alt="" class="img-responsive">
-<h3>斗地主</h3>
+<div class="team-section-grid">
+<img src="<?php echo $skin_path;?>/images/project-1.jpg" alt="" class="img-responsive">
+<div class="overlay-section">
+<div class="desc">
+<a href="/index.php?id=95">
+<h2 style="color: white; margin-bottom: 5%;">斗地主游戏</h2>
+<p>斗地主游戏玩法</p>
 </a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 text-center fh5co-project animate-box" data-animate-effect="fadeIn">
+<div class="team-section-grid">
+<img src="<?php echo $skin_path;?>/images/project-1.jpg" alt="" class="img-responsive">
+<div class="overlay-section">
+<div class="desc">
+<a href="/index.php?id=95">
+<h2 style="color: white; margin-bottom: 5%;">斗地主游戏</h2>
+<p>斗地主游戏玩法</p>
+</a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 
-<div id="fh5co-blog" class="fh5co-bg-section">
+<!-- <div id="fh5co-blog" class="fh5co-bg-section">
 <div class="container">
 <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -226,15 +247,16 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
 <div id="fh5co-started" style="background-image:url(<?php echo $skin_path;?>/images/img_bg_2.jpg);">
 <div class="overlay"></div>
 <div class="container">
-<div class="row animate-box">
+<!-- <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 <h2>掌猴游戏</h2>
-<p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作<br />掌猴游戏平台海量用户等你代理加盟。</p>
+<p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作
+<br />掌猴游戏平台海量用户等你代理加盟。</p>
 </div>
 </div>
 <div class="row animate-box">
@@ -243,12 +265,21 @@
 <a href="#" class="btn btn-default btn-lg">立即加盟</a>
 </p>
 </div>
+</div> -->
+
+<div class="row">
+<div class="col-lg-5 col-md-5">
+
+</div>
+
+<div class="col-lg-7 col-md-7 contact-us-r">
+<?php echo callGuestbook();?>
+</div>
 </div>
 </div>
 </div>
 
 <!-- <section class="contact-us slideanim" id="contact">
-<?php echo templatetag::tag('首页第五行栏目');?>
 <div class="container">
 <div class="row">
 <div class="col-lg-5 col-md-5">
