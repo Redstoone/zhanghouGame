@@ -8,7 +8,7 @@
 <div class="container">
 <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-<h2>选择代理花色棋牌游戏的4大理由</h2>
+<h2>选择代理掌猴棋牌游戏的4大理由</h2>
 <p>棋牌游戏代理 联运-利润丰厚，月入过万不是梦！</p>
 </div>
 </div>
@@ -295,7 +295,7 @@
 <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 <h2>掌猴游戏</h2>
-<p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作,经典房卡模式,花色棋牌游戏平台海量用户等你代理加盟。</p>
+<p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作,经典房卡模式,掌猴棋牌游戏平台海量用户等你代理加盟。</p>
 </div>
 </div>
 <div class="row animate-box">

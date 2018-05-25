@@ -28,35 +28,40 @@
 </script>
 <form id="frmGuestbookSubmit" method="post" action="<?php echo url('guestbook/index');?>" name="frmGuestbookSubmit" class="form_message">
 
-<div id="guestbook_name">
-<?php echo lang('name');?><span>Name</span>
-<input name="nickname" id="nickname" value="" class="guestbook_input" />
+<div class="col-sm-6 col-md-6">
+<div id="guestbook_name"  class="form-group">
+<?php echo lang('name');?>
+<input name="nickname" id="nickname" value="" class="guestbook_input form-control" />
 </div>
 
-<div id="guestbook_email">
-<?php echo lang('email');?><span>Email</span>
-<input name="guestemail" id="guestemail" value="" class="guestbook_input" />
+<div id="guestbook_email" class="form-group">
+<?php echo lang('email');?>
+<input name="guestemail" id="guestemail" value="" class="guestbook_input form-control" />
 </div>
-<div id="guestbook_tel">
-<?php echo lang('guesttel');?><span>Tel</span>
-<input name="guesttel" id="guesttel" value="" class="guestbook_input" />
-</div>
-
-<div id="guestbook_title">
-<?php echo lang('title');?><span>Title</span>
-<input type="text" name="title" id="title" value="" class="guestbook_input" />
+<div id="guestbook_tel" class="form-group">
+<?php echo lang('guesttel');?>
+<input name="guesttel" id="guesttel" value="" class="guestbook_input form-control" />
 </div>
 
-<div id="guestbook_textarea">
-<?php echo lang('content');?><span>Content</span>
-<textarea id="content" name="content" class="guestbook_textarea"></textarea>
+<div id="guestbook_title" style="display: none;" class="form-group">
+<?php echo lang('title');?>
+<input type="text" name="title" id="title" value="" class="guestbook_input form-control" />
+</div>
 </div>
 
-<?php if(config::get('verifycode')=='1'){?>
-<div id="guestbook_verify">
-<input type='text' id="verify"  tabindex="3"  name="verify" /><?php echo verify();?>
+<div class="col-sm-6 col-md-6">
+<div id="guestbook_textarea" class="form-group">
+<?php echo lang('content');?>
+<textarea id="content" name="content" class="guestbook_textarea form-control"></textarea>
 </div>
-<?php } ?>
+
+<div id="guestbook_verify" class="form-group">
+验证码
+<div>
+<input type='text' id="verify"  tabindex="3"  name="verify"  class="guestbook_input guest-verify form-control securityCheck"/><?php echo verify();?>
+</div>
+</div>
+</div>
 
 
 <?php if(config::get('verifycode') == 2){?>
@@ -85,5 +90,7 @@
 </script>
 <?php } ?>
 
-<input type="submit" name="submit" value="<?php echo lang(submit_on);?>" class="guestbook_btn">
+<div class="col-md-8">
+    <input type="submit" name="submit" value="<?php echo lang(submit_on);?>" class="guestbook_btn btn btn-lg ">
+</div>
 </form>
