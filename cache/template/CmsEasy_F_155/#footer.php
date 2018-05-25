@@ -56,10 +56,10 @@
               target="_blank"><?php echo get('site_beian');?><?php echo lang(site_beian);?><?php echo get('site_beian_number');?><?php echo lang(number);?></a> <?php } ?>
           </small>
         </p>
-        <p>
+        <p style="display: none;">
           <small class="block">
-            Powered by
-            <a href="https://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
+            <?php echo getCopyRight();?><?php if(get('guestbook_enable')) { ?>&nbsp;&nbsp;
+            <a rel="nofollow" title="<?php echo lang(feedback);?>" href="<?php echo url('guestbook');?>" target="_blank"><?php echo lang('feedback');?></a><?php } ?>
           </small>
         </p>
       </div>

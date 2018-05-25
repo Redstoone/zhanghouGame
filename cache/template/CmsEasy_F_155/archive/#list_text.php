@@ -5,7 +5,7 @@
 <div class="container list-container" style="padding: 3em 0;">
 <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-<h2>棋牌代理资讯</h2>
+<h2>棋牌资讯</h2>
 </div>
 </div>
 <div class="row">
@@ -13,6 +13,9 @@
 foreach($archives as $i => $archive) { ?>
 <div class="col-lg-4 col-md-4">
 <div class="fh5co-blog animate-box">
+<a href="<?php echo $archive['url'];?>">
+<img class="img-responsive" src="<?php echo $archive['thumb'];?>" alt="">
+</a>
 <a href="<?php echo $archive['url'];?>" class="blog-text">
 <h3> <?php echo $archive['title'];?> </h3>
 <span class="posted_on"><?php echo sdate($archive['adddate'],'Y-m-d');?></span>

@@ -55,10 +55,10 @@
               target="_blank">{get('site_beian')}{lang(site_beian)}{get('site_beian_number')}{lang(number)}</a> {/if}
           </small>
         </p>
-        <p>
+        <p style="display: none;">
           <small class="block">
-            Powered by
-            <a href="https://www.cmseasy.cn" title="CmsEasy企业网站系统" target="_blank">CmsEasy</a>
+            {getCopyRight()}{if get('guestbook_enable')}&nbsp;&nbsp;
+            <a rel="nofollow" title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">{lang('feedback')}</a>{/if}
           </small>
         </p>
       </div>

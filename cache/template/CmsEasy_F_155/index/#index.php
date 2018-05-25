@@ -1,216 +1,6 @@
 <?php defined('ROOT') or exit('Can\'t Access !'); ?>
 <?php echo template('header.html'); ?>
 
-<!-- banner section -->
-<!-- <section id="slider" class="content">
-<ul class="slider-wrapper">
-<?php if(get('slide_number')=='1') { ?>
-<li class="current-slide">
-<img class="first-slide" src="<?php echo get(slide_pic1);?>" alt="<?php echo get(slide_pic1_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic1_title);?></h3>
-<p><?php echo get(slide_pic1_info);?></p>
-</div>
-</li>
-<?php } elseif (get('slide_number')=='2') { ?>
-<li class="current-slide">
-<img class="first-slide" src="<?php echo get(slide_pic1);?>" alt="<?php echo get(slide_pic1_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic1_title);?></h3>
-<p><?php echo get(slide_pic1_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic2);?>" alt="<?php echo get(slide_pic2_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic2_title);?></h3>
-<p><?php echo get(slide_pic2_info);?></p>
-</div>
-</li>
-<?php } elseif (get('slide_number')=='3') { ?>
-<li class="current-slide">
-<img class="first-slide" src="<?php echo get(slide_pic1);?>" alt="<?php echo get(slide_pic1_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic1_title);?></h3>
-<p><?php echo get(slide_pic1_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic2);?>" alt="<?php echo get(slide_pic2_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic2_title);?></h3>
-<p><?php echo get(slide_pic2_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic3);?>" alt="<?php echo get(slide_pic3_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic3_title);?></h3>
-<p><?php echo get(slide_pic3_info);?></p>
-</div>
-</li>
-<?php } elseif (get('slide_number')=='4') { ?>
-<li class="current-slide">
-<img class="first-slide" src="<?php echo get(slide_pic1);?>" alt="<?php echo get(slide_pic1_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic1_title);?></h3>
-<p><?php echo get(slide_pic1_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic2);?>" alt="<?php echo get(slide_pic2_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic2_title);?></h3>
-<p><?php echo get(slide_pic2_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic3);?>" alt="<?php echo get(slide_pic3_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic3_title);?></h3>
-<p><?php echo get(slide_pic3_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic4);?>" alt="<?php echo get(slide_pic4_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic4_title);?></h3>
-<p><?php echo get(slide_pic4_info);?></p>
-</div>
-</li>
-<?php } elseif (get('slide_number')=='5') { ?>
-<li class="current-slide">
-<img class="first-slide" src="<?php echo get(slide_pic1);?>" alt="<?php echo get(slide_pic1_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic1_title);?></h3>
-<p><?php echo get(slide_pic1_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic2);?>" alt="<?php echo get(slide_pic2_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic2_title);?></h3>
-<p><?php echo get(slide_pic2_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic3);?>" alt="<?php echo get(slide_pic3_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic3_title);?></h3>
-<p><?php echo get(slide_pic3_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic4);?>" alt="<?php echo get(slide_pic4_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic4_title);?></h3>
-<p><?php echo get(slide_pic4_info);?></p>
-</div>
-</li>
-<li>
-<img class="first-slide" src="<?php echo get(slide_pic5);?>" alt="<?php echo get(slide_pic5_title);?>">
-<div class="caption">
-<h3 class="slider-title"><?php echo get(slide_pic5_title);?></h3>
-<p><?php echo get(slide_pic5_info);?></p>
-</div>
-</li>
-<?php } ?>
-
-</ul>
-<div class="slider-shadow"></div>
-<ul id="control-buttons" class="control-buttons"></ul>
-</section> -->
-<!-- /banner section -->
-
-
-<!-- about section -->
-<!-- <section class="about-us" id="about">
-<div class="container">
-<div class="col-lg-12">
-<h2 class="text-center slideanim"><?php echo templatetag::tag('首页第一行栏目');?></h2>
-<p class="text-center slideanim"><?php echo templatetag::tag('首页第一行栏目说明');?></p>
-</div>
-</div>
-</section> -->
-<!-- /about section -->
-
-<!-- service section -->
-<!-- <section class="our-services" id="service">
-<?php echo templatetag::tag('首页第二行栏目');?>
-<div class="container">
-<div class="row">
-<div class="col-lg-3 col-md-3 col-sm-6">
-<div class="serv-info">
-<i class="fa fa-sun-o slideanim" aria-hidden="true"></i>
-<?php echo templatetag::tag('首页第二行子栏目一');?>
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-6">
-<div class="serv-info">
-<i class="fa fa-desktop slideanim" aria-hidden="true"></i>
-<?php echo templatetag::tag('首页第二行子栏目二');?>
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-6">
-<div class="serv-info">
-<i class="fa fa-life-ring slideanim" aria-hidden="true"></i>
-<?php echo templatetag::tag('首页第二行子栏目三');?>
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-6">
-<div class="serv-info">
-<i class="fa fa-trophy slideanim" aria-hidden="true"></i>
-<?php echo templatetag::tag('首页第二行子栏目四');?>
-</div>
-</div>
-</div>
-<div class="row serv-row">
-<div class="col-lg-3 col-md-3 col-sm-6">
-<div class="serv-info">
-<i class="fa fa-hourglass slideanim" aria-hidden="true"></i>
-<?php echo templatetag::tag('首页第二行子栏目五');?>
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-6">
-<div class="serv-info">
-<i class="fa fa-cubes slideanim" aria-hidden="true"></i>
-<?php echo templatetag::tag('首页第二行子栏目六');?>
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-6">
-<div class="serv-info">
-<i class="fa fa-shopping-basket slideanim" aria-hidden="true"></i>
-<?php echo templatetag::tag('首页第二行子栏目七');?>
-</div>
-</div>
-<div class="col-lg-3 col-md-3 col-sm-6">
-<div class="serv-info">
-<i class="fa fa-fort-awesome slideanim" aria-hidden="true"></i>
-<?php echo templatetag::tag('首页第二行子栏目八');?>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-<!-- /service section -->
-<!-- portfolio section -->
-<!-- <section class="our-portfolio slideanim" id="portfolio">
-<?php echo templatetag::tag('首页第三行栏目');?>
-<div class="container">
-<div id="grid-gallery" class="grid-gallery">
-<section class="grid-wrap">
-<ul class="grid">
-<?php echo templatetag::tag('首页第三行栏目图片12条');?>
-</ul>
-</section>
-</div>
-</div>
-</section> -->
-<!-- portfolio section -->
-<!-- team section -->
-
-<!-- /team section -->
-
 <aside id="fh5co-hero" class="js-fullheight">
 <div class="flexslider js-fullheight">
 <ul class="slides">
@@ -353,7 +143,7 @@
 <div class="container">
 <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-<h2>棋牌游戏下载</h2>
+<h2>棋牌游戏</h2>
 </div>
 </div>
 </div>
@@ -385,7 +175,7 @@
 <div class="container">
 <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-<h2>棋牌代理资讯</h2>
+<h2>棋牌资讯</h2>
 </div>
 </div>
 <div class="row">
@@ -444,7 +234,7 @@
 <div class="row animate-box">
 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 <h2>掌猴游戏</h2>
-<p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作,经典房卡模式,掌猴游戏平台海量用户等你代理加盟。</p>
+<p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作<br />掌猴游戏平台海量用户等你代理加盟。</p>
 </div>
 </div>
 <div class="row animate-box">
@@ -456,15 +246,6 @@
 </div>
 </div>
 </div>
-
-<!-- <section class="our-team" id="team">
-<?php echo templatetag::tag('首页第四行栏目');?>
-<div class="container">
-<div class="main">
-<?php echo templatetag::tag('首页第四行栏目图片4条');?>
-</div>
-</div>
-</section> -->
 
 <!-- <section class="contact-us slideanim" id="contact">
 <?php echo templatetag::tag('首页第五行栏目');?>
