@@ -218,23 +218,6 @@
 </div>
 
 <div class="panel panel-default">
-<div class="panel-heading" role="tab" id="headingTwo">
-<h4 class="panel-title">
-<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
-  aria-controls="collapseTwo">
-买代码或模版自己做更便宜？
-</a>
-</h4>
-</div>
-<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" style="background: rgba(0, 0, 0, 0.04); height: 0px;"
-  aria-expanded="false">
-<div class="panel-body">
-<p>贪图便宜、低价源码；页面粗糙，程序BUG多；服务器遭到攻击，损失惨重；售后问题，无人维护。</p>
-</div>
-</div>
-</div>
-
-<div class="panel panel-default">
 <div class="panel-heading" role="tab" id="headingThree">
 <h4 class="panel-title">
 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
@@ -289,20 +272,19 @@
 </div>
 </div>
 
+
 <div id="fh5co-started" style="background-image:url(<?php echo $skin_path;?>/images/img_bg_2.jpg);">
 <div class="overlay"></div>
-<div class="container">
-<div class="row animate-box">
-<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-<h2>掌猴游戏</h2>
-<p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作,经典房卡模式,掌猴棋牌游戏平台海量用户等你代理加盟。</p>
+<div class="container guest">
+<div class="row">
+<div class="col-lg-4 col-md-4">
+<h2>游戏代理申请</h2>
+<p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作
+<br />掌猴游戏平台海量用户等你代理加盟。</p>
 </div>
-</div>
-<div class="row animate-box">
-<div class="col-md-8 col-md-offset-2 text-center">
-<p>
-<a href="#" class="btn btn-default btn-lg">立即加盟</a>
-</p>
+
+<div class="col-lg-8 col-md-8 contact-us-r">
+<?php echo callGuestbook();?>
 </div>
 </div>
 </div>
