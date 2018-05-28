@@ -262,12 +262,12 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-nav ul li.active>a:after {
   position: absolute;
-  bottom: 25px;
+  bottom: 5px;
   left: 15px;
   content: '';
-  width: 20px;
+  width: calc(100% - 30px);
   height: 2px;
-  background: #F95959;
+  background: #3596e6;
   margin: 0 auto;
 }
 

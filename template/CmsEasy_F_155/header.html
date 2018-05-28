@@ -56,7 +56,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="oen{if $topid==0} active{/if}"><a href="{$base_url}/">{lang(homepage)}</a></li>
 					{loop categories_nav() $t}
-					<li class="oen{if count(categories($t[catid]))} dropdown{/if}">
+						<li class="oen {if count(categories($t[catid]))} dropdown{/if}">
 						<a href="{$t[url]}"{if config::get('nav_blank')==1} target=" _blank"{/if}{if count(categories($t[catid]))} data-toggle="dropdown" data-submenu=""{/if}>
 							{$t[catname]}{if count(categories($t[catid]))}<span class="caret"></span>{/if}
 						</a>
@@ -104,6 +104,7 @@
 <!-- /navigation -->
 
 {if $topid==0}
+
 {else}
 	{template 'system/cslide.html'}
 {/if}

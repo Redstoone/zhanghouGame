@@ -59,7 +59,7 @@ document.oncontextmenu=stop;
 <li class="oen<?php if($topid==0) { ?> active<?php } ?>"><a href="<?php echo $base_url;?>/"><?php echo lang(homepage);?></a></li>
 <?php if(is_array(categories_nav()))
 foreach(categories_nav() as $t) { ?>
-<li class="oen<?php if(count(categories($t['catid']))) { ?> dropdown<?php } ?>">
+<li class="oen <?php if(count(categories($t['catid']))) { ?> dropdown<?php } ?>">
 <a href="<?php echo $t['url'];?>"<?php if(config::get('nav_blank')==1) { ?> target=" _blank"<?php } ?><?php if(count(categories($t['catid']))) { ?> data-toggle="dropdown" data-submenu=""<?php } ?>>
 <?php echo $t['catname'];?><?php if(count(categories($t['catid']))) { ?><span class="caret"></span><?php } ?>
 </a>
@@ -111,6 +111,7 @@ foreach(categories_nav($t3['catid']) as $t4) { ?>
 <!-- /navigation -->
 
 <?php if($topid==0) { ?>
+
 <?php } else { ?>
 <?php echo template('system/cslide.html'); ?>
 <?php } ?>

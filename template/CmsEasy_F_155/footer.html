@@ -72,6 +72,42 @@
   </a>
 </div>
 
+<script>
+  $(function () {
+    var _querystring = parseQueryString(window.location.href);
+    if (_querystring.catid == '1') {
+      $($('.navbar-nav li')[1]).addClass('active')
+    } else if (_querystring.catid == '2') {
+      $($('.navbar-nav li')[2]).addClass('active')
+    }else if (_querystring.catid == '3') {
+      $($('.navbar-nav li')[3]).addClass('active')
+    } else if (_querystring.catid == '5') {
+      $($('.navbar-nav li')[4]).addClass('active')
+    }
+
+    function parseQueryString(url) {
+      var arr = []
+      var res = {}
+      url = url.split('#')[0]
+      arr = url.split('?')
+      arr.shift()
+      var queryStr = arr.join('?')
+      if (queryStr.trim().length === 0) {
+        return res
+      }
+
+      arr = queryStr.split('&')
+      for (var i = 0; i < arr.length; i++) {
+        var itemArr = arr[i].split('=')
+        var name = itemArr.shift()
+        var value = itemArr.join('=')
+        res[name] = value
+      }
+      return res
+    }
+  })
+</script>
+
 <!-- jQuery Easing -->
 <script src="{$skin_path}/js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
