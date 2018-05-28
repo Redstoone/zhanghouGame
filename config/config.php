@@ -17,11 +17,11 @@
 
 //网站地址[<span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="http://起始并以 / 结束！" /></span>]
 
-'sitename'=>'掌猴棋牌', 
+'sitename'=>'掌猴游戏', 
 
 //网站名称[<span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="请填写网站简称，主要用于页底说明！" /></span>]
 
-'fullname'=>'掌猴棋牌', 
+'fullname'=>'掌猴游戏', 
 
 //网页标题[<span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="网页标题处显示，可结合关键词使用！" /></span>]
 
