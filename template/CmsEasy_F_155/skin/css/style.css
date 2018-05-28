@@ -2346,4 +2346,12 @@ input#my_nindemingzi, input#my_lianxifangshi, textarea#my_liuyanneirong {
   color: #f2f2f2;
 }
 
+.team-section-grid .overlay-section .desc.desc-qrcode {
+  padding: 10px;
+}
+
+.project-qrcode {
+  width: 160px;
+}
+
 /*# sourceMappingURL=style.css.map */

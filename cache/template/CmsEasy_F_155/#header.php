@@ -23,6 +23,8 @@
 <link rel="stylesheet" href="<?php echo $skin_path;?>/css/flexslider.css">
 <link rel="stylesheet" href="<?php echo $skin_path;?>/css/style.css">
 <script src="<?php echo $skin_path;?>/js/modernizr-2.6.2.min.js"></script>
+<!-- jQuery -->
+<script src="<?php echo $skin_path;?>/js/jquery.min.js"></script>
 </head>
 <?php if(get('shield_right_key')=='1') { ?>
 <body oncontextmenu="return false" onselectstart="return false">

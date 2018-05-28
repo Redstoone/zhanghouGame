@@ -73,8 +73,6 @@
   </a>
 </div>
 
-<!-- jQuery -->
-<script src="<?php echo $skin_path;?>/js/jquery.min.js"></script>
 <!-- jQuery Easing -->
 <script src="<?php echo $skin_path;?>/js/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->

@@ -153,7 +153,7 @@
 <div class="team-section-grid">
 <img src="<?php echo $skin_path;?>/images/project-1.jpg" alt="" class="img-responsive">
 <div class="overlay-section">
-<div class="desc">
+<div class="desc desc-qrcode">
 <a href="/index.php?id=95">
 <h2 style="color: white; margin-bottom: 5%;">斗地主游戏</h2>
 <p>
