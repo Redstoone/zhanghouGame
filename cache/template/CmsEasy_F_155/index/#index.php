@@ -254,7 +254,7 @@
 <div class="container guest">
 <div class="row">
 <div class="col-lg-4 col-md-4">
-<h2>戏代理申请</h2>
+<h2>游戏代理申请</h2>
 <p>掌猴游戏一家专业的棋牌游戏开发商,诚招棋牌代理,棋牌游戏免费代理加盟合作
 <br />掌猴游戏平台海量用户等你代理加盟。</p>
 </div>
