@@ -23,7 +23,7 @@
         <ul class="fh5co-footer-links">
           <li> 官方直招微信：13116673394 </li>
           <li> 官方直招微信：13757488797 </li>
-          <li> 诚招代理商QQ：13757488797 </li>
+          <li> 诚招代理商QQ：1152884413 </li>
           <li>客服邮箱：
             <a href="mailto:1152884413@qq.com">1152884413@qq.com</a>
           </li>
@@ -40,7 +40,7 @@
             <a href="mailto:1152884413@qq.com">1152884413@qq.com</a>
           </li>
           <li>
-            <a href="http://www.zhanghou.com">www.zhanghou.com</a>
+            <a href="http://www.handmonkey.com/">www.handmonkey.com</a>
           </li>
         </ul>
       </div>
@@ -50,15 +50,12 @@
       <div class="col-md-12 text-center">
         <p>
           <small class="block">{get('sitename')} {get(site_right)} {if config::get('site_icp')}
-            <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">{get('site_icp')}</a>{/if}{if config::get('site_beian_number')}&nbsp;&nbsp;
-            <a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={get('site_beian_number')}" rel="nofollow"
-              target="_blank">{get('site_beian')}{lang(site_beian)}{get('site_beian_number')}{lang(number)}</a> {/if}
+            <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">浙ICP备17057378号</a>{/if}
           </small>
         </p>
-        <p style="display: none;">
+        <p>
           <small class="block">
-            {getCopyRight()}{if get('guestbook_enable')}&nbsp;&nbsp;
-            <a rel="nofollow" title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">{lang('feedback')}</a>{/if}
+            {getCopyRight()}{if get('guestbook_enable')}&nbsp;&nbsp; {/if}
           </small>
         </p>
       </div>
@@ -79,7 +76,7 @@
       $($('.navbar-nav li')[1]).addClass('active')
     } else if (_querystring.catid == '2') {
       $($('.navbar-nav li')[2]).addClass('active')
-    }else if (_querystring.catid == '3') {
+    } else if (_querystring.catid == '3') {
       $($('.navbar-nav li')[3]).addClass('active')
     } else if (_querystring.catid == '5') {
       $($('.navbar-nav li')[4]).addClass('active')

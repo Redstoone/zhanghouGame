@@ -24,7 +24,7 @@
         <ul class="fh5co-footer-links">
           <li> 官方直招微信：13116673394 </li>
           <li> 官方直招微信：13757488797 </li>
-          <li> 诚招代理商QQ：13757488797 </li>
+          <li> 诚招代理商QQ：1152884413 </li>
           <li>客服邮箱：
             <a href="mailto:1152884413@qq.com">1152884413@qq.com</a>
           </li>
@@ -41,7 +41,7 @@
             <a href="mailto:1152884413@qq.com">1152884413@qq.com</a>
           </li>
           <li>
-            <a href="http://www.zhanghou.com">www.zhanghou.com</a>
+            <a href="http://www.handmonkey.com/">www.handmonkey.com</a>
           </li>
         </ul>
       </div>
@@ -51,15 +51,12 @@
       <div class="col-md-12 text-center">
         <p>
           <small class="block"><?php echo get('sitename');?> <?php echo get(site_right);?> <?php if(config::get('site_icp')) { ?>
-            <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank"><?php echo get('site_icp');?></a><?php } ?><?php if(config::get('site_beian_number')) { ?>&nbsp;&nbsp;
-            <a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?php echo get('site_beian_number');?>" rel="nofollow"
-              target="_blank"><?php echo get('site_beian');?><?php echo lang(site_beian);?><?php echo get('site_beian_number');?><?php echo lang(number);?></a> <?php } ?>
+            <a rel="nofollow" href="http://www.miibeian.gov.cn/" rel="nofollow" target="_blank">浙ICP备17057378号</a><?php } ?>
           </small>
         </p>
-        <p style="display: none;">
+        <p>
           <small class="block">
-            <?php echo getCopyRight();?><?php if(get('guestbook_enable')) { ?>&nbsp;&nbsp;
-            <a rel="nofollow" title="<?php echo lang(feedback);?>" href="<?php echo url('guestbook');?>" target="_blank"><?php echo lang('feedback');?></a><?php } ?>
+            <?php echo getCopyRight();?><?php if(get('guestbook_enable')) { ?>&nbsp;&nbsp; <?php } ?>
           </small>
         </p>
       </div>
@@ -80,7 +77,7 @@
       $($('.navbar-nav li')[1]).addClass('active')
     } else if (_querystring.catid == '2') {
       $($('.navbar-nav li')[2]).addClass('active')
-    }else if (_querystring.catid == '3') {
+    } else if (_querystring.catid == '3') {
       $($('.navbar-nav li')[3]).addClass('active')
     } else if (_querystring.catid == '5') {
       $($('.navbar-nav li')[4]).addClass('active')
