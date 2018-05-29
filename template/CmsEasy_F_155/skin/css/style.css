@@ -437,6 +437,9 @@ h1, h2, h3, h4, h5, h6, figure {
   #fh5co-hero .flexslider .slider-text>.slider-text-inner h1 {
     font-size: 30px;
   }
+  #fh5co-hero .flexslider .slider-text{
+    margin: 0 auto;
+  }
 }
 
 #fh5co-hero .flexslider .slider-text>.slider-text-inner h2 {
@@ -1972,6 +1975,9 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 768px) {
   .fh5co-pricing {
     padding: 3em 0;
+  }
+  .navbar-brand img {
+    height: 62px;
   }
 }
 
