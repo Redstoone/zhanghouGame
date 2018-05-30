@@ -1,8 +1,9 @@
+<?php defined('ROOT') or exit('Can\'t Access !'); ?>
 
 <style type="text/css">
-	select#catid,select#typeid {width:100%;}
-	input#title {width:80%;margin:0px;}
-	span.hotspot {float:right; padding-left:10px;}
+select#catid,select#typeid {width:100%;}
+input#title {width:80%;margin:0px;}
+span.hotspot {float:right; padding-left:10px;}
 </style>
 
 <script type="text/javascript">
@@ -17,7 +18,8 @@
             document.form1.title.focus();
             return false;
         }
-        {loop $field $f}
+        <?php if(is_array($field))
+foreach($field as $f) { ?>
 <?php
 if (!preg_match('/^my_/', $f['name']) || !$f['notnull']) {
     //unset($field[$f['name']]);
@@ -25,13 +27,13 @@ if (!preg_match('/^my_/', $f['name']) || !$f['notnull']) {
 }
 
 ?>
-        if(!document.form1.{$f['name']}.value){
+        if(!document.form1.<?php echo $f['name'];?>.value){
             alert("请填写<?php echo setting::$var['archive'][$f['name']]['cname']; ?>");
             setTab('one',6,6);
-            document.form1.{$f['name']}.focus();
+            document.form1.<?php echo $f['name'];?>.focus();
             return false;
         }
-        {/loop}
+        <?php } ?>
         return true;
     }
 </script>
@@ -40,51 +42,51 @@ if (!preg_match('/^my_/', $f['name']) || !$f['notnull']) {
     $id='';
 echo modify("/act/".front::$act."/table/".$table.$id."/deletestate/".front::get('deletestate')); ?>" enctype="multipart/form-data" onsubmit="return checkform();">
     <input type="hidden" name="onlymodify" value=""/>
-    <script type="text/javascript" src="{$base_url}/common/js/ajaxfileupload.js"></script>
-    <script type="text/javascript" src="{$base_url}/common/js/jquery.imgareaselect.min.js"></script>
-    <script type="text/javascript" src="{$base_url}/common/js/ThumbAjaxFileUpload.js"></script>
-	<link rel="stylesheet" href="{$base_url}/common/js/jquery/ui/ui.datepicker.css" type="text/css" />
-    <script language="javascript" src="{$base_url}/common/js/jquery/ui/ui.datepicker.js"></script>
-    <script type="text/javascript" src="{$base_url}/js/jquery.colorpicker.js"></script>
+    <script type="text/javascript" src="<?php echo $base_url;?>/common/js/ajaxfileupload.js"></script>
+    <script type="text/javascript" src="<?php echo $base_url;?>/common/js/jquery.imgareaselect.min.js"></script>
+    <script type="text/javascript" src="<?php echo $base_url;?>/common/js/ThumbAjaxFileUpload.js"></script>
+<link rel="stylesheet" href="<?php echo $base_url;?>/common/js/jquery/ui/ui.datepicker.css" type="text/css" />
+    <script language="javascript" src="<?php echo $base_url;?>/common/js/jquery/ui/ui.datepicker.js"></script>
+    <script type="text/javascript" src="<?php echo $base_url;?>/js/jquery.colorpicker.js"></script>
 
 <?php $root = config::get('base_url').'/ueditor';?>
-    <script type="text/javascript" charset="utf-8" src="{$root}/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="{$root}/ueditor.all.js"> </script>
-    <script type="text/javascript" charset="utf-8" src="{$root}/lang/zh-cn/zh-cn.js"></script>
-    <script type="text/javascript" charset="utf-8" src="{$root}/addCustomizeButton.js"></script>
+    <script type="text/javascript" charset="utf-8" src="<?php echo $root;?>/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="<?php echo $root;?>/ueditor.all.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="<?php echo $root;?>/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" charset="utf-8" src="<?php echo $root;?>/addCustomizeButton.js"></script>
     
     <script>
         $(function(){
             $("#catid").change( function(){
-				get_field($("#catid").val());
+get_field($("#catid").val());
             });
-			$("#tag_option").change( function(){
-				if($("#tag_option").find('option:selected').val() != '0'){
-					if($("#tag").val() != ''){
-						var sp = ',';	
-					}else{
-						sp = '';	
-					}
-					$("#tag").val($("#tag").val()+sp+$("#tag_option").find('option:selected').text());
-					//$("#tagids").val($("#tagids").val()+sp+$("#tagid").find('option:selected').val());
-				}
+$("#tag_option").change( function(){
+if($("#tag_option").find('option:selected').val() != '0'){
+if($("#tag").val() != ''){
+var sp = ',';	
+}else{
+sp = '';	
+}
+$("#tag").val($("#tag").val()+sp+$("#tag_option").find('option:selected').text());
+//$("#tagids").val($("#tagids").val()+sp+$("#tagid").find('option:selected').val());
+}
             });
-			$("#color_btn").colorpicker({
-				fillcolor:true,
-				success:function(o,color){
-					$("#title").css("color",color);
-					$("#color").val(color);
-				},
-				reset:function(o,color){
-					$("#title").css("color","");
-					$("#color").val("");
-				}
-			});
-			$("#title").css("color","{$data['color']}");
+$("#color_btn").colorpicker({
+fillcolor:true,
+success:function(o,color){
+$("#title").css("color",color);
+$("#color").val(color);
+},
+reset:function(o,color){
+$("#title").css("color","");
+$("#color").val("");
+}
+});
+$("#title").css("color","<?php echo $data['color'];?>");
         });
         function attachment_delect(id) {
             $.ajax({
-url: '{url('tool/deleteattachment/site/'.front::get('site'),false)}&id='+id,
+url: '<?php echo url('tool/deleteattachment/site/'.front::get('site'),false);?>&id='+id,
 type: 'GET',
 dataType: 'text',
 timeout: 10000,
@@ -94,8 +96,8 @@ error: function(){
 success: function(data){
     document.form1.attachment_id.value=0;
     get('attachment_path').value='';
-	get('attachment_intro').value='';
-	get('attachment_path_i').innerHTML='';
+get('attachment_intro').value='';
+get('attachment_path_i').innerHTML='';
     get('file_info').innerHTML='';
 }
             });
@@ -116,10 +118,10 @@ success: function(data){
             });
         }
     </script>
-    <link rel="stylesheet" href="{$base_url}/common/js/jquery/ui/ui.datepicker.css" type="text/css" media="screen" title="core css file" charset="utf-8" />
-<script language="javascript" src="{$base_url}/common/js/jquery/ui/ui.datepicker.js"></script>
-    <script type="text/javascript" src="{$base_url}/js/upimg/dialog.js"></script>
-    <link href="{$base_url}/images/admin/dialog.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="<?php echo $base_url;?>/common/js/jquery/ui/ui.datepicker.css" type="text/css" media="screen" title="core css file" charset="utf-8" />
+<script language="javascript" src="<?php echo $base_url;?>/common/js/jquery/ui/ui.datepicker.js"></script>
+    <script type="text/javascript" src="<?php echo $base_url;?>/js/upimg/dialog.js"></script>
+    <link href="<?php echo $base_url;?>/images/admin/dialog.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -140,14 +142,14 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">栏目</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('catid',$form,$field,$data)}
+<?php echo form::getform('catid',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="选择内容所在栏目，如果栏目有子级栏目，请选择子级栏目！"></span>
 </div>
 </div>
 
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">分类</div>
-<div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">{form::getform('typeid',$form,$field,$data)}
+<div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left"><?php echo form::getform('typeid',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="选择内容所在分类，如果分类有子级分类，请选择子级分类！"></span>
 </div>
 </div>
@@ -165,7 +167,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">置顶</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('toppost',$form,$field,$data)}
+<?php echo form::getform('toppost',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="文章置顶,可按栏目或全站置顶！"></span>
 </div>
 </div>
@@ -174,14 +176,14 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">标题</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-<span class="hotspot"><img id="color_btn" width="14" height="14" src="{$base_url}/images/admin/colorpicker.png" style="cursor:pointer;" /><input id="color" name="color" type="hidden" /></span>  <span class="hotspot"><input name="strong" type="checkbox" value="1" {if $data['strong']==1}checked{/if} /></span>{form::getform('title',$form,$field,$data,'class="form-control"')}
+<span class="hotspot"><img id="color_btn" width="14" height="14" src="<?php echo $base_url;?>/images/admin/colorpicker.png" style="cursor:pointer;" /><input id="color" name="color" type="hidden" /></span>  <span class="hotspot"><input name="strong" type="checkbox" value="1" <?php if($data['strong']==1) { ?>checked<?php } ?> /></span><?php echo form::getform('title',$form,$field,$data,'class="form-control"');?>
 </div>
 </div>
 
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">副标题</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('subtitle',$form,$field,$data,'class="form-control"')}
+<?php echo form::getform('subtitle',$form,$field,$data,'class="form-control"');?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="内容自定义副标题！"></span>
 </div>
 </div>
@@ -190,7 +192,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">正文</div>
 <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10 text-left">
-{form::getform('content',$form,$field,$data)}
+<?php echo form::getform('content',$form,$field,$data);?>
 
 <div class="fieldset flash" id="fsUploadProgress">
 <span class="legend"></span>
@@ -201,7 +203,7 @@ success: function(data){
 </div>
 <div class="clearfix blank20"></div>
 <style type="text/css">
-	#content {min-height:500px;}
+#content {min-height:500px;}
 </style>
 
 <div class="row">
@@ -213,7 +215,7 @@ success: function(data){
 <div class="clearfix blank20"></div>
 <script type="text/javascript">
 <!--
-	$('#pic2').on('change',function(){
+$('#pic2').on('change',function(){
     if ($(this).is(':checked')) {
         $('#pic1').prop('checked','checked');
     }else{
@@ -226,7 +228,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">内容简介</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('introduce',$form,$field,$data)}
+<?php echo form::getform('introduce',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="填写内容简介，如留空将自动截取内容中字符作为简介！"></span>
 </div>
 </div>
@@ -236,7 +238,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">Tag标签</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('tag',$form,$field,$data)}
+<?php echo form::getform('tag',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="选择内容所属Tag标签！"></span>
 </div>
 </div>
@@ -246,7 +248,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right"></div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('tag_option',$form,$field,$data)}
+<?php echo form::getform('tag_option',$form,$field,$data);?>
 </div>
 </div>
 <div class="clearfix blank20"></div>
@@ -259,11 +261,11 @@ success: function(data){
 </div>
 </div>
 <div class="clearfix blank20"></div>
-	
+
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">过期时间</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('outtime',$form,$field,$data)}
+<?php echo form::getform('outtime',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="过期内容会被删除到回收站！"></span>
 </div>
 </div>
@@ -281,7 +283,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">来源</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('attr3',$form,$field,$data)}
+<?php echo form::getform('attr3',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="内容发布来源，可自定义，默认为本站网址！"></span>
 </div>
 </div>
@@ -290,7 +292,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">审核</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('checked',$form,$field,$data)}
+<?php echo form::getform('checked',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="设置内容是否发布，勾选未审核，不在前台显示，内容在后台列表可继续编辑！<br />默认：为审核状态！"></span>
 </div>
 </div>
@@ -306,7 +308,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">网页标题</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('mtitle',$form,$field,$data)}
+<?php echo form::getform('mtitle',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="可填写不同于内容名称的关键词，有利于搜索优化！"></span>
 </div>
 </div>
@@ -316,7 +318,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">网页关键词</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('keyword',$form,$field,$data)}
+<?php echo form::getform('keyword',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="网页META信息中的keywords信息，可填写与内容相关的关键词，以英文逗号相隔，有利于搜索优化！"></span>
 </div>
 </div>
@@ -326,7 +328,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">页面描述</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('description',$form,$field,$data)}
+<?php echo form::getform('description',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="网页META信息中的description信息，可填写与内容相关的简介，有利于搜索优化！"></span>
 </div>
 </div>
@@ -337,7 +339,7 @@ success: function(data){
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
 <div class="alert alert-warning alert-danger" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-	<span class="glyphicon glyphicon-warning-sign"></span>	<strong>URL规则</strong> 	[	以下选项如不熟悉操作，请勿修改！]	
+<span class="glyphicon glyphicon-warning-sign"></span>	<strong>URL规则</strong> 	[	以下选项如不熟悉操作，请勿修改！]	
     </div>
 </div>
 </div>
@@ -347,10 +349,10 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">URL规则</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left form-group has-error">
-<input name="htmlrule1" type="text" class="form-control" value="{$data['htmlrule']}" />
+<input name="htmlrule1" type="text" class="form-control" value="<?php echo $data['htmlrule'];?>" />
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="你可以自定生成文件名称<br /><br />例如：abc.html<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>{</b>$caturl<b>}</b>/abc.html<br />默认：<b>{</b>$caturl<b>}</b>/show_<b>{</b>$aid<b>}</b>(_<b>{</b>$page<b>}</b>).html<br /><b>{</b>$caturl<b>}</b> = 栏目目录<br /><b>{</b>$aid<b>}</b> = 内容ID<br /><b>{</b>$page<b>}</b> = 内容分页值！"></span>
 <div class="clearfix blank20"></div>
-{form::getform('htmlrule',$form,$field,$data)}
+<?php echo form::getform('htmlrule',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="你可以选择系统默认的URL规则<br />例如：abc.html<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>{</b>$caturl<b>}</b>/abc.html<br />默认：<b>{</b>$caturl<b>}</b>/show_<b>{</b>$aid<b>}</b>(_<b>{</b>$page<b>}</b>).html<br /><b>{</b>$caturl<b>}</b> = 栏目目录<br /><b>{</b>$aid<b>}</b> = 内容ID<br /><b>{</b>$page<b>}</b> = 内容分页值！"></span>
 </div>
 </div>
@@ -360,7 +362,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">生成HTML</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('ishtml',$form,$field,$data)}
+<?php echo form::getform('ishtml',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="选择内容是否生成静态，如设置了浏览与下载权限，内容必须为动态显示！<br />默认为继承栏目动静态设置！"></span>
 </div>
 </div>
@@ -375,7 +377,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">内容页模板</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('template',$form,$field,$data)}
+<?php echo form::getform('template',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="选择内容模板样式，可区别栏目设置的其他内容样式，以便拥有独立的外观！<br />默认为继承栏目模板设置！"></span>
 </div>
 </div>
@@ -384,7 +386,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">手机内容页模板</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('templatewap',$form,$field,$data)}
+<?php echo form::getform('templatewap',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="选择内容模板样式，可区别栏目设置的其他内容样式，以便拥有独立的外观！<br />默认为继承栏目模板设置！"></span>
 </div>
 </div>
@@ -393,7 +395,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">内容绑定表单</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('showform',$form,$field,$data)}
+<?php echo form::getform('showform',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="栏目下属内容页绑定表单！"></span>
 </div>
 </div>
@@ -403,7 +405,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">内容推荐位</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('attr1',$form,$field,$data)}
+<?php echo form::getform('attr1',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="勾选不同内容推荐位后，结合内容标签中的推荐位，可区分调用不同内容！"></span>
 </div>
 </div>
@@ -413,7 +415,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">价格</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('attr2',$form,$field,$data)}
+<?php echo form::getform('attr2',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="请填写大于0的数字型字符！"></span>
 </div>
 </div>
@@ -423,7 +425,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">产品颜色</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('pcolor',$form,$field,$data)}
+<?php echo form::getform('pcolor',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="每行一个！"></span>
 </div>
 </div>
@@ -433,7 +435,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">链接跳转到</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('linkto',$form,$field,$data)}
+<?php echo form::getform('linkto',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="填写后，点击标题后，将连接到链接地址！"></span>
 </div>
 </div>
@@ -443,7 +445,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">内容的评级</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('grade',$form,$field,$data)}
+<?php echo form::getform('grade',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="对内容进行评级，将以五角星显示级别！"></span>
 </div>
 </div>
@@ -453,7 +455,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">防伪码</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('isecoding',$form,$field,$data)}
+<?php echo form::getform('isecoding',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="此篇文章是否开启防伪码！"></span>
 </div>
 </div>
@@ -471,7 +473,7 @@ success: function(data){
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">缩略图</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::getform('thumb',$form,$field,$data)}
+<?php echo form::getform('thumb',$form,$field,$data);?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="缩略图用于图片列表页显示！"></span>
 </div>
 </div>
@@ -499,19 +501,19 @@ $ic=0;if(is_array($data['pics'])){foreach($data['pics'] as $k => $v){
 $ic++;
 if(!isset($v['url'])) continue;
 ?>
-<div id="pics{$ic}_up" style="clear:both;">
-<span id="pics{$ic}_preview"><img width="150" style="width:150px;" src="{$v['url']}" border="0" /></span>
+<div id="pics<?php echo $ic;?>_up" style="clear:both;">
+<span id="pics<?php echo $ic;?>_preview"><img width="150" style="width:150px;" src="<?php echo $v['url'];?>" border="0" /></span>
 <div class="blank10"></div>
 <div class="row">
 <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10 text-right">
-<input id="pics{$ic}" value="{$v['url']}" class="form-control" name="pics[{$ic}][url]" /></div>
+<input id="pics<?php echo $ic;?>" value="<?php echo $v['url'];?>" class="form-control" name="pics[<?php echo $ic;?>][url]" /></div>
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-left">
-<input style="float:left;" id="pics{$ic}_del" onclick="pics_delete('{$ic}','pics');" value="删除" type="button" name="delbutton" class="btn btn-primary" />
+<input style="float:left;" id="pics<?php echo $ic;?>_del" onclick="pics_delete('<?php echo $ic;?>','pics');" value="删除" type="button" name="delbutton" class="btn btn-primary" />
 </div>
 </div>
 <div class="blank10"></div>
 <div class="row">
-<div class="col-xs-8 col-sm-8 col-md-9 col-lg-10 text-right"><input id="pics{$ic}alt" value="{$v['alt']}" class="form-control" name="pics[{$ic}][alt]" /></div>
+<div class="col-xs-8 col-sm-8 col-md-9 col-lg-10 text-right"><input id="pics<?php echo $ic;?>alt" value="<?php echo $v['alt'];?>" class="form-control" name="pics[<?php echo $ic;?>][alt]" /></div>
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-left">
 文字说明
 </div>
@@ -523,7 +525,7 @@ if(!isset($v['url'])) continue;
 }
 }?>
 </div>
-<input type="hidden" name="ic" id="ic" value="{$ic}" />
+<input type="hidden" name="ic" id="ic" value="<?php echo $ic;?>" />
 <div class="blank10"></div>
 <a title="选择文件" onclick="javascript:windowsdig('选择文件','iframe:index.php?case=file&act=updialog&fileinputid=pics&getbyid=pvpics&max=99&checkfrom=piclistshow','900px','480px','iframe')" href="#body"><p><img src="images/admin/add_pic.gif" width="150" /></p></a>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="当内容页模板选择：<br /> [ 图片内容页 - archive/show_pic.html ] <br />用于图片幻灯显示效果展示！"></span>
@@ -540,16 +542,16 @@ if(!isset($v['url'])) continue;
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">附件</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
 <span id="file_info" style="color:red"></span><br>
-附件路径：<input type="text" name="attachment_path" class="form-control"  id="attachment_path" value="{$data['attachment_path']}" />
+附件路径：<input type="text" name="attachment_path" class="form-control"  id="attachment_path" value="<?php echo $data['attachment_path'];?>" />
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="填写此项无须再上传附件，请填写完整的url地址，例如：http://www.cmseasy.cn/upload/attachment.rar！"></span>
 <div class="blank10"></div>
 
-<input type="hidden" name="attachment_id"  id="attachment_id" value="{=archive_attachment(@$data['aid'],'id')}"  class="form-control" />
-附件名称：<input type="text" name="attachment_intro"  id="attachment_intro" value="{=archive_attachment(@$data['aid'],'intro')}" class="form-control" />
+<input type="hidden" name="attachment_id"  id="attachment_id" value="<?php echo archive_attachment(@$data['aid'],'id');?>"  class="form-control" />
+附件名称：<input type="text" name="attachment_intro"  id="attachment_intro" value="<?php echo archive_attachment(@$data['aid'],'intro');?>" class="form-control" />
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="填附件的下载提示名称！"></span>
 
 <div class="blank10"></div>
-保存地址：<span id="attachment_path_i">{=archive_attachment(@$data['aid'],'path')}</span>
+保存地址：<span id="attachment_path_i"><?php echo archive_attachment(@$data['aid'],'path');?></span>
 <input class="btn btn-primary" value="删除" type="button" name="delbutton"  onclick="attachment_delect(get('attachment_id').value)" />
 <div class="blank10"></div>
 <?php if (front::$act == 'edit' && $data['attachment_id']) { ?>
@@ -557,8 +559,8 @@ if(!isset($v['url'])) continue;
 <input type="file" name="fileupload" id="fileupload" style="width:400px" />
 <div class="blank30"></div>
 
-<input type="button"  name="filebuttonUpload"  id="filebuttonUpload" onclick="return ajaxFileUpload('fileupload','{url("tool/uploadfile",false)}','#uploading');" value="上传" class="btn btn-primary" />
-<img id="uploading" src="{$base_url}/common/js/loading.gif" style="display:none;">
+<input type="button"  name="filebuttonUpload"  id="filebuttonUpload" onclick="return ajaxFileUpload('fileupload','<?php echo url("tool/uploadfile",false);?>','#uploading');" value="上传" class="btn btn-primary" />
+<img id="uploading" src="<?php echo $base_url;?>/common/js/loading.gif" style="display:none;">
 
 </div>
 </div>
@@ -586,7 +588,7 @@ if(!isset($v['url'])) continue;
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">投票标题</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
 
-{form::input("vote[$i]",vote::title(@$data['aid'],$i),'class="form-control" ')}
+<?php echo form::input("vote[$i]",vote::title(@$data['aid'],$i),'class="form-control" ');?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="填写内容中投票内容名称！"></span>
 </div>
 </div>
@@ -596,7 +598,7 @@ if(!isset($v['url'])) continue;
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">图片url</div>
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left">
-{form::input("vote_image[$i]",vote::img(@$data['aid'],$i),'class="form-control" ')}
+<?php echo form::input("vote_image[$i]",vote::img(@$data['aid'],$i),'class="form-control" ');?>
 <span class="tips" data-toggle="tooltip" data-html="ture" data-placement="left" title="填写内容中投票内容图片地址！"></span>
 </div>
 </div>
@@ -624,14 +626,15 @@ if(!isset($v['url'])) continue;
 <th align="center"  width="30%">浏览</th>
 <th align="center"  width="30%">下载</th>
 </tr>
-{loop usergroup::getInstance()->group $group}
+<?php if(is_array(usergroup::getInstance()->group))
+foreach(usergroup::getInstance()->group as $group) { ?>
 <?php if ($group['groupid'] == '888') continue; ?>
 <tr>
-<td align="center">{$group.name}</td>
-<td align="center">{form::checkbox("_ranks[".$group['groupid']."][view]",-1, @$data['_ranks'][$group['groupid']]['view'])}</td>
-<td align="center">{form::checkbox("_ranks[".$group['groupid']."][down]",-1, @$data['_ranks'][$group['groupid']]['down'])}</td>
+<td align="center"><?php echo $group['name'];?></td>
+<td align="center"><?php echo form::checkbox("_ranks[".$group['groupid']."][view]",-1, @$data['_ranks'][$group['groupid']]['view']);?></td>
+<td align="center"><?php echo form::checkbox("_ranks[".$group['groupid']."][down]",-1, @$data['_ranks'][$group['groupid']]['down']);?></td>
 </tr>
-{/loop}
+<?php } ?>
 </table>
 </div>
 
@@ -653,7 +656,8 @@ if(!isset($v['url'])) continue;
 
 <div id="con_one_6">
 
-{loop $field $f}
+<?php if(is_array($field))
+foreach($field as $f) { ?>
 <?php
 $name=$f['name'];
 if (!preg_match('/^my_/', $name)) {
@@ -663,7 +667,7 @@ if (!preg_match('/^my_/', $name)) {
 $category = category::getInstance();
 $sonids = $category->sons(setting::$var['archive'][$name]['catid']);
 if(setting::$var['archive'][$name]['catid'] != $data['catid'] && !in_array($data['catid'],$sonids) && (setting::$var['archive'][$name]['catid'])){
-	unset($field[$name]);
+unset($field[$name]);
     continue;
 }
 if (!isset($data[$name]))
@@ -674,7 +678,7 @@ if (!isset($data[$name]))
 <div class="col-xs-8 col-sm-7 col-md-7 col-lg-5 text-left" id="con_one_6"><?php echo form::getform($name,$form, $field, $data); ?></div>
 </div>
 <div class="clearfix blank20"></div>
-{/loop}
+<?php } ?>
 
 
 
@@ -682,7 +686,7 @@ if (!isset($data[$name]))
 </div>
 
 
-{if front::get('catid')}<script type="text/javascript">get_field({front::get('catid')});</script>{/if}</div>
+<?php if(front::get('catid')) { ?><script type="text/javascript">get_field(<?php echo front::get('catid');?>);</script><?php } ?></div>
 <input type="submit" name="submit" value=" 提交 " class="btn btn-primary" />
 
 </form>

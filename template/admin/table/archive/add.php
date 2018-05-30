@@ -191,7 +191,7 @@ success: function(data){
 
 <div class="row">
 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 text-right">正文</div>
-<div class="col-xs-8 col-sm-8 col-md-7 col-lg-5 text-left">
+<div class="col-xs-8 col-sm-8 col-md-9 col-lg-10 text-left">
 {form::getform('content',$form,$field,$data)}
 
 <div class="fieldset flash" id="fsUploadProgress">
