@@ -194,62 +194,8 @@
 </div>
 </div>
 
-<!-- <div id="fh5co-blog" class="fh5co-bg-section">
-<div class="container">
-<div class="row animate-box">
-<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-<h2>棋牌资讯</h2>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-4 col-md-4">
-<div class="fh5co-blog animate-box">
-<a href="#">
-<img class="img-responsive" src="<?php echo $skin_path;?>/images/project-4.jpg" alt="">
-</a>
-<div class="blog-text">
-<span class="posted_on">Nov. 15th</span>
-<h3>
-<a href="#">Legal Consultation</a>
-</h3>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-<a href="#" class="btn btn-primary">Read More</a>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-4">
-<div class="fh5co-blog animate-box">
-<a href="#">
-<img class="img-responsive" src="<?php echo $skin_path;?>/images/project-2.jpg" alt="">
-</a>
-<div class="blog-text">
-<span class="posted_on">Nov. 15th</span>
-<h3>
-<a href="#">Criminal Case</a>
-</h3>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-<a href="#" class="btn btn-primary">Read More</a>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-4">
-<div class="fh5co-blog animate-box">
-<a href="#">
-<img class="img-responsive" src="<?php echo $skin_path;?>/images/project-3.jpg" alt="">
-</a>
-<div class="blog-text">
-<span class="posted_on">Nov. 15th</span>
-<h3>
-<a href="#">Business Law</a>
-</h3>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-<a href="#" class="btn btn-primary">Read More</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div> -->
+<!-- <?php echo template('tpltag/tag_content-index-news.html'); ?> -->
+<?php echo templatetag::tag('首页新闻三张');?>
 
 <div id="fh5co-started" style="background-image:url(<?php echo $skin_path;?>/images/img_bg_2.jpg);">
 <div class="overlay"></div>
