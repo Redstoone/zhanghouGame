@@ -333,4 +333,31 @@
       'introduce' => '',
     ),
   ),
+  18 => 
+  array (
+    'id' => '18',
+    'name' => '首页新闻三张',
+    'tagfrom' => 'content',
+    'tagcontent' => 'null',
+    'setting' => 
+    array (
+      'onlymodify' => '',
+      'catid' => '2',
+      'son' => '1',
+      'typeid' => '0',
+      'spid' => '0',
+      'province_id' => '0',
+      'city_id' => '0',
+      'section_id' => '0',
+      'length' => '20',
+      'introduce_length' => '',
+      'ordertype' => 'adddate-desc',
+      'istop' => '0',
+      'limit' => '3',
+      'thumb' => 'on',
+      'attr1' => '0',
+      'tagtemplate' => 'tag_content-index-news.html',
+      'submit' => '提交',
+    ),
+  ),
 );
